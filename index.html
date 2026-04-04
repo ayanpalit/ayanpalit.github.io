@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayan Palit | Full-Stack Engineer & AI Builder</title>
+    <meta name="description"
+        content="Ayan Palit – Full-Stack Software Engineer specialising in scalable microservices, React.js, Spring Boot, and AI-powered applications." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════ NAV BAR ═══════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <span class="brand-bracket">[</span>
+                <span class="brand-name">AP</span>
+                <span class="brand-bracket">]</span>
+                <span class="brand-dot">_</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certs</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="mailto:ayanp626@gmail.com" class="nav-cta">
+                <span>Hire Me</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ OS BOOT SCREEN ═══════════════════ -->
+    <div class="boot-screen" id="bootScreen">
+        <!-- Grid overlay -->
+        <div class="boot-grid"></div>
+
+        <div class="boot-container">
+            <!-- System header -->
+            <div class="boot-header">
+                <div class="boot-logo">
+                    <div class="boot-logo-ring ring-1"></div>
+                    <div class="boot-logo-ring ring-2"></div>
+                    <div class="boot-logo-ring ring-3"></div>
+                    <span class="boot-logo-text">AP</span>
+                </div>
+                <div class="boot-sys-info">
+                    <div class="boot-sys-line">PORTFOLIO OS <span class="boot-version">v2.0.26</span></div>
+                    <div class="boot-sys-line dim">KERNEL: ayanpalit-core // BUILD: STABLE</div>
+                </div>
+                <div class="boot-status-led"></div>
+            </div>
+
+            <!-- Divider -->
+            <div class="boot-divider"></div>
+
+            <!-- Terminal lines -->
+            <div class="boot-terminal" id="bootTerminal">
+                <div class="terminal-prompt">
+                    <span class="prompt-user">root</span><span class="prompt-at">@</span><span
+                        class="prompt-host">ayanpalit</span><span class="prompt-colon">:</span><span
+                        class="prompt-path">~$</span>
+                    <span class="prompt-cmd"> ./boot-portfolio.sh</span>
+                </div>
+                <div class="terminal-output" id="terminalOutput"></div>
+            </div>
+
+            <!-- Progress section -->
+            <div class="boot-progress-section" id="bootProgressSection">
+                <div class="progress-bars" id="progressBars"></div>
+            </div>
+
+            <!-- Skip hint -->
+            <div class="boot-skip" id="bootSkip">
+                <span>Press <kbd>SPACE</kbd> or <kbd>ENTER</kbd> to skip</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Parallax OS Dashboard Background -->
+    <div class="os-dashboard-bg">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        <div class="global-noise"></div>
+        <div class="global-grid"></div>
+    </div>
+
+    <!-- ═══════════════════ HERO SECTION ═══════════════════ -->
+    <section class="hero" id="hero">
+
+        <div class="hero-content" id="heroContent">
+            <!-- Status badge -->
+            <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <span>Available for opportunities</span>
+            </div>
+
+            <!-- Role path -->
+            <div class="hero-path" id="heroPath">
+                <span class="path-seg">~/</span><span class="path-seg">ayan-palit</span><span
+                    class="path-slash">/</span><span class="path-seg" id="heroRoleTyped"></span><span
+                    class="hero-cursor-inline" id="heroCursorInline">▋</span>
+            </div>
+
+            <!-- Main name -->
+            <h1 class="hero-name">
+                <span class="name-first">Ayan</span>
+                <span class="name-last"> Palit</span>
+                <span class="hero-tag">&lt;/&gt;</span>
+            </h1>
+
+            <!-- Tagline -->
+            <p class="hero-tagline">
+                Full-Stack Engineer &amp; AI Builder — crafting intelligent systems<br />
+                from <span class="hl">React</span> frontends to <span class="hl">Spring Boot</span> microservices to
+                <span class="hl">OpenAI-powered</span> products.
+            </p>
+
+            <!-- Stats row -->
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-num">2+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">15+</span>
+                    <span class="stat-label">Projects Shipped</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">AWS</span>
+                    <span class="stat-label">Cloud Certified</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">AI</span>
+                    <span class="stat-label">ML Integration</span>
+                </div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary" id="heroCta1">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                    View Projects
+                </a>
+                <a href="#contact" class="btn btn-secondary" id="heroCta2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    Get In Touch
+                </a>
+                <a href="https://linkedin.com/in/ayan-palit-989b09251" target="_blank" class="btn btn-ghost"
+                    id="heroCta3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+
+            <!-- Tech stack row -->
+            <div class="hero-stack">
+                <span class="stack-label">Stack //</span>
+                <div class="stack-pills">
+                    <span class="pill">React.js</span>
+                    <span class="pill">Spring Boot</span>
+                    <span class="pill">Node.js</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">AWS</span>
+                    <span class="pill">OpenAI API</span>
+                    <span class="pill">MySQL</span>
+                    <span class="pill">Docker</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero terminal card -->
+        <div class="hero-terminal-card" id="heroTerminalCard">
+            <div class="htc-header">
+                <div class="htc-dots">
+                    <span class="htc-dot red"></span>
+                    <span class="htc-dot yellow"></span>
+                    <span class="htc-dot green"></span>
+                </div>
+                <span class="htc-title">system.status</span>
+                <span class="htc-time" id="htcTime">--:--:--</span>
+            </div>
+            <div class="htc-body">
+                <div class="htc-line"><span class="htc-key">user</span><span class="htc-sep"> → </span><span
+                        class="htc-val">ayan_palit</span></div>
+                <div class="htc-line"><span class="htc-key">role</span><span class="htc-sep"> → </span><span
+                        class="htc-val accent">Programmer Analyst</span></div>
+                <div class="htc-line"><span class="htc-key">company</span><span class="htc-sep"> → </span><span
+                        class="htc-val">Cognizant Technology Solutions</span></div>
+                <div class="htc-line"><span class="htc-key">location</span><span class="htc-sep"> → </span><span
+                        class="htc-val">Bengaluru, Karnataka</span></div>
+                <div class="htc-line"><span class="htc-key">focus</span><span class="htc-sep"> → </span><span
+                        class="htc-val green">AI-Powered Full Stack</span></div>
+                <div class="htc-line"><span class="htc-key">status</span><span class="htc-sep"> → </span><span
+                        class="htc-val blink-green">● PRODUCTION READY</span></div>
+                <div class="htc-divider"></div>
+                <div class="htc-line"><span class="htc-key">frontend</span><span class="htc-sep"> → </span><span
+                        class="htc-val">React · JS · HTML · CSS</span></div>
+                <div class="htc-line"><span class="htc-key">backend</span><span class="htc-sep"> → </span><span
+                        class="htc-val">Spring Boot · Node · REST</span></div>
+                <div class="htc-line"><span class="htc-key">ai_stack</span><span class="htc-sep"> → </span><span
+                        class="htc-val">OpenAI · LangChain · GPT</span></div>
+                <div class="htc-line"><span class="htc-key">cloud</span><span class="htc-sep"> → </span><span
+                        class="htc-val">AWS · Docker · CI/CD</span></div>
+                <div class="htc-divider"></div>
+                <div class="htc-line uptime"><span class="htc-key">uptime</span><span class="htc-sep"> → </span><span
+                        class="htc-val" id="htcUptime">calculating...</span></div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll" id="heroScroll">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// about</span>
+                <h2 class="section-title">Who Am I</h2>
+                <p class="section-sub">A full-stack engineer with AI ambitions</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Results-driven <span class="hl">Full Stack Software Engineer</span> with 2+ years of hands-on
+                        experience in Java development, Spring Boot framework, React.js, and enterprise web application
+                        development.</p>
+                    <p>Expertise in building <span class="hl">scalable microservices architectures</span>, RESTful API
+                        development, and cloud-based solutions with a proven track record in Agile software development
+                        lifecycle (SDLC).</p>
+                    <p>Actively transitioning into <span class="hl">AI/ML integration</span> — building OpenAI-powered
+                        platforms, LangChain workflows, and intelligent full-stack applications that solve real-world
+                        problems.</p>
+                    <div class="about-certs">
+                        <div class="cert-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 15l8.385-8.415a2.1 2.1 0 000-2.97L18.415 1.6A2.1 2.1 0 0015.445 1.6L3 14l1 4 4 1z" />
+                                <line x1="16" y1="5" x2="19" y2="8" />
+                            </svg>
+                            AWS Certified Cloud Practitioner
+                        </div>
+                        <div class="cert-badge">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M12 15l8.385-8.415a2.1 2.1 0 000-2.97L18.415 1.6A2.1 2.1 0 0015.445 1.6L3 14l1 4 4 1z" />
+                                <line x1="16" y1="5" x2="19" y2="8" />
+                            </svg>
+                            Oracle Cloud Infrastructure 2023 AI Associate
+                        </div>
+                    </div>
+                </div>
+                <div class="about-cards">
+                    <div class="info-card">
+                        <div class="info-card-icon">🎓</div>
+                        <div>
+                            <strong>B.Tech Electrical Engineering</strong>
+                            <span>MCKVIE, Kolkata · CGPA 8.05</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">📍</div>
+                        <div>
+                            <strong>Bengaluru, Karnataka</strong>
+                            <span>Open to remote opportunities</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">⚡</div>
+                        <div>
+                            <strong>AI Transition</strong>
+                            <span>LLMs · RAG · OpenAI · LangChain</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon">🏆</div>
+                        <div>
+                            <strong>Award for Excellence</strong>
+                            <span>Secondary Education, 2017</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SKILLS ═══════════════════ -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// skills</span>
+                <h2 class="section-title">Tech Arsenal</h2>
+                <p class="section-sub">Tools, frameworks, and platforms I work with</p>
+            </div>
+            <div class="skills-grid">
+
+                <div class="skill-group">
+                    <div class="skill-group-header">
+                        <span class="skill-group-icon">⚡</span>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>React.js</span><span class="skill-pct">90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>JavaScript</span><span class="skill-pct">88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>HTML / CSS</span><span class="skill-pct">92%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>jQuery / Ajax</span><span class="skill-pct">80%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-header">
+                        <span class="skill-group-icon">🔧</span>
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Spring Boot</span><span class="skill-pct">88%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Java</span><span class="skill-pct">85%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Node.js</span><span class="skill-pct">78%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="78"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Python</span><span class="skill-pct">75%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-w="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-header">
+                        <span class="skill-group-icon">🤖</span>
+                        <h3>AI / ML</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>OpenAI API</span><span class="skill-pct">82%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill accent" data-w="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>LangChain</span><span class="skill-pct">74%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill accent" data-w="74"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>LLM Fine-Tuning</span><span class="skill-pct">68%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill accent" data-w="68"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Prompt Engineering</span><span class="skill-pct">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill accent" data-w="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-header">
+                        <span class="skill-group-icon">☁️</span>
+                        <h3>Cloud &amp; DevOps</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>AWS (EC2, S3, Lambda)</span><span class="skill-pct">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill green" data-w="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Docker</span><span class="skill-pct">76%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill green" data-w="76"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Git / GitHub</span><span class="skill-pct">90%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill green" data-w="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>MySQL / MongoDB</span><span class="skill-pct">82%</span></div>
+                            <div class="skill-bar">
+                                <div class="skill-fill green" data-w="82"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ PROJECTS WORKSPACE ═══════════════════ -->
+    <section class="section pw-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// projects.workspace</span>
+                <h2 class="section-title">Projects Workspace</h2>
+                <p class="section-sub">Resume-extracted · Production shipped · Architecture documented</p>
+            </div>
+
+            <!-- Workspace toolbar -->
+            <div class="pw-toolbar">
+                <div class="pw-toolbar-left">
+                    <span class="pw-wb-dot" style="background:#ff5f56"></span>
+                    <span class="pw-wb-dot" style="background:#ffbd2e"></span>
+                    <span class="pw-wb-dot" style="background:#27c93f"></span>
+                    <span class="pw-toolbar-title">workspace://ayan-palit/projects</span>
+                </div>
+                <div class="pw-toolbar-right">
+                    <span class="pw-proj-count">3 projects loaded</span>
+                </div>
+            </div>
+
+            <!-- Window grid -->
+            <div class="pw-grid">
+
+                <!-- ══ WINDOW 1: AI Wellness ══ -->
+                <div class="pw-window pw-window--featured" data-window="1">
+                    <div class="pw-titlebar">
+                        <div class="pw-win-dots">
+                            <span class="pw-dot pw-dot--red"></span>
+                            <span class="pw-dot pw-dot--yellow"></span>
+                            <span class="pw-dot pw-dot--green"></span>
+                        </div>
+                        <span class="pw-win-path">
+                            <span class="pw-path-dim">~/projects/</span>ai-wellness-platform
+                        </span>
+                        <div class="pw-win-badges">
+                            <span class="pw-badge-type">AI · Full Stack</span>
+                            <span class="pw-badge-featured">★ Featured</span>
+                        </div>
+                    </div>
+
+                    <div class="pw-body">
+                        <!-- Header row -->
+                        <div class="pw-proj-header">
+                            <div class="pw-proj-icon" style="--icon-color: #6378ff">🧠</div>
+                            <div class="pw-proj-meta">
+                                <h3 class="pw-proj-title">AI-Enabled Pill Reminder &amp; Wellness Platform</h3>
+                                <div class="pw-proj-context">
+                                    <span class="pw-ctx-item">📅 Cognizant Vibe Coding Week</span>
+                                    <span class="pw-ctx-sep">·</span>
+                                    <span class="pw-ctx-item">🏢 Cognizant Technology Solutions</span>
+                                </div>
+                            </div>
+                            <div class="pw-proj-links">
+                                <a href="https://ayapalitele.app" target="_blank" class="pw-link-btn" title="Live Demo">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <line x1="10" y1="14" x2="21" y2="3" />
+                                    </svg>
+                                    Live
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Summary -->
+                        <p class="pw-summary">
+                            Full-stack wellness platform with an <span class="hl">AI-powered prescription scanner</span>
+                            that auto-extracts medication data from uploaded images. Integrated <span class="hl">OpenAI
+                                GPT</span> with the Rxnorm API to generate on-demand drug info, reminders, and wellness
+                            insights via a real-time notification dashboard.
+                        </p>
+
+                        <!-- Impact metrics -->
+                        <div class="pw-metrics">
+                            <div class="pw-metric">
+                                <span class="pw-metric-val">100%</span>
+                                <span class="pw-metric-label">AI Prescription Accuracy</span>
+                            </div>
+                            <div class="pw-metric">
+                                <span class="pw-metric-val">Real-time</span>
+                                <span class="pw-metric-label">Notification Engine</span>
+                            </div>
+                            <div class="pw-metric">
+                                <span class="pw-metric-val">GPT</span>
+                                <span class="pw-metric-label">Drug Info Chatbot</span>
+                            </div>
+                        </div>
+
+                        <!-- Tech stack -->
+                        <div class="pw-stack-row">
+                            <span class="pw-stack-label">stack</span>
+                            <div class="pw-tech-pills">
+                                <span class="pw-pill pw-pill--blue">React.js</span>
+                                <span class="pw-pill pw-pill--blue">Spring Boot</span>
+                                <span class="pw-pill pw-pill--violet">OpenAI API</span>
+                                <span class="pw-pill pw-pill--violet">GPT-4</span>
+                                <span class="pw-pill pw-pill--neutral">MySQL</span>
+                                <span class="pw-pill pw-pill--neutral">Rxnorm API</span>
+                                <span class="pw-pill pw-pill--neutral">REST</span>
+                            </div>
+                        </div>
+
+                        <!-- Architecture drawer trigger -->
+                        <button class="pw-drawer-toggle" onclick="toggleDrawer(this, 'arch-1')" aria-expanded="false">
+                            <svg class="pw-drawer-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                            <span class="pw-drawer-mono">architecture.expand()</span>
+                            <span class="pw-drawer-hint">View system design</span>
+                        </button>
+
+                        <!-- Architecture drawer -->
+                        <div class="pw-drawer" id="arch-1">
+                            <div class="pw-drawer-inner">
+                                <div class="pw-arch-header">
+                                    <span class="pw-arch-label">// system_architecture</span>
+                                </div>
+                                <div class="pw-arch-diagram">
+                                    <div class="pw-arch-layer">
+                                        <div class="pw-arch-node pw-node--front">
+                                            <div class="pw-node-icon">⚛</div>
+                                            <div class="pw-node-label">React.js</div>
+                                            <div class="pw-node-sub">Prescription Upload · Dashboard</div>
+                                        </div>
+                                    </div>
+                                    <div class="pw-arch-arrow">↓</div>
+                                    <div class="pw-arch-layer pw-arch-layer--multi">
+                                        <div class="pw-arch-node pw-node--back">
+                                            <div class="pw-node-icon">🍃</div>
+                                            <div class="pw-node-label">Spring Boot</div>
+                                            <div class="pw-node-sub">REST API Gateway</div>
+                                        </div>
+                                        <div class="pw-arch-node pw-node--ai">
+                                            <div class="pw-node-icon">🤖</div>
+                                            <div class="pw-node-label">OpenAI GPT</div>
+                                            <div class="pw-node-sub">Prescription Parser · Chatbot</div>
+                                        </div>
+                                        <div class="pw-arch-node pw-node--ext">
+                                            <div class="pw-node-icon">💊</div>
+                                            <div class="pw-node-label">Rxnorm API</div>
+                                            <div class="pw-node-sub">Drug Information</div>
+                                        </div>
+                                    </div>
+                                    <div class="pw-arch-arrow">↓</div>
+                                    <div class="pw-arch-layer">
+                                        <div class="pw-arch-node pw-node--db">
+                                            <div class="pw-node-icon">🗄</div>
+                                            <div class="pw-node-label">MySQL</div>
+                                            <div class="pw-node-sub">User Data · Medication Records</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pw-arch-notes">
+                                    <div class="pw-arch-note">▸ Image upload → GPT vision → structured prescription JSON
+                                    </div>
+                                    <div class="pw-arch-note">▸ Real-time push notifications for medication reminders
+                                    </div>
+                                    <div class="pw-arch-note">▸ Rxnorm integration for clinical drug data lookups</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW 2: E-Commerce ══ -->
+                <div class="pw-window" data-window="2">
+                    <div class="pw-titlebar">
+                        <div class="pw-win-dots">
+                            <span class="pw-dot pw-dot--red"></span>
+                            <span class="pw-dot pw-dot--yellow"></span>
+                            <span class="pw-dot pw-dot--green"></span>
+                        </div>
+                        <span class="pw-win-path">
+                            <span class="pw-path-dim">~/projects/</span>ecommerce-fullstack
+                        </span>
+                        <div class="pw-win-badges">
+                            <span class="pw-badge-type">E-Commerce · Full Stack</span>
+                        </div>
+                    </div>
+
+                    <div class="pw-body">
+                        <div class="pw-proj-header">
+                            <div class="pw-proj-icon" style="--icon-color: #9d5fff">🛒</div>
+                            <div class="pw-proj-meta">
+                                <h3 class="pw-proj-title">E-Commerce Website Full-Stack Development</h3>
+                                <div class="pw-proj-context">
+                                    <span class="pw-ctx-item">🏢 Cognizant Technology Solutions</span>
+                                    <span class="pw-ctx-sep">·</span>
+                                    <span class="pw-ctx-item">📅 Software Engineer Intern</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="pw-summary">
+                            Comprehensive e-commerce platform with a <span class="hl">React.js</span> frontend and <span
+                                class="hl">Spring Boot</span> microservices backend. Implemented <span class="hl">JWT
+                                authentication</span>, MySQL-backed user/product data management, and REST APIs enabling
+                            seamless cross-platform communication. Features responsive UI compatible across all devices.
+                        </p>
+
+                        <div class="pw-metrics">
+                            <div class="pw-metric">
+                                <span class="pw-metric-val">JWT</span>
+                                <span class="pw-metric-label">Auth System</span>
+                            </div>
+                            <div class="pw-metric">
+                                <span class="pw-metric-val">30%</span>
+                                <span class="pw-metric-label">Efficiency Boost</span>
+                            </div>
+                            <div class="pw-metric">
+                                <span class="pw-metric-val">Cross</span>
+                                <span class="pw-metric-label">Platform UI</span>
+                            </div>
+                        </div>
+
+                        <div class="pw-stack-row">
+                            <span class="pw-stack-label">stack</span>
+                            <div class="pw-tech-pills">
+                                <span class="pw-pill pw-pill--blue">React.js</span>
+                                <span class="pw-pill pw-pill--blue">JavaScript</span>
+                                <span class="pw-pill pw-pill--blue">HTML / CSS</span>
+                                <span class="pw-pill pw-pill--neutral">Spring Boot</span>
+                                <span class="pw-pill pw-pill--neutral">Java</span>
+                                <span class="pw-pill pw-pill--neutral">MySQL</span>
+                                <span class="pw-pill pw-pill--neutral">REST APIs</span>
+                                <span class="pw-pill pw-pill--neutral">JWT</span>
+                            </div>
+                        </div>
+
+                        <button class="pw-drawer-toggle" onclick="toggleDrawer(this, 'arch-2')" aria-expanded="false">
+                            <svg class="pw-drawer-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                            <span class="pw-drawer-mono">architecture.expand()</span>
+                            <span class="pw-drawer-hint">View system design</span>
+                        </button>
+
+                        <div class="pw-drawer" id="arch-2">
+                            <div class="pw-drawer-inner">
+                                <div class="pw-arch-header">
+                                    <span class="pw-arch-label">// system_architecture</span>
+                                </div>
+                                <div class="pw-arch-diagram">
+                                    <div class="pw-arch-layer pw-arch-layer--multi">
+                                        <div class="pw-arch-node pw-node--front">
+                                            <div class="pw-node-icon">⚛</div>
+                                            <div class="pw-node-label">React.js</div>
+                                            <div class="pw-node-sub">Product Listing · Cart · Checkout</div>
+                                        </div>
+                                        <div class="pw-arch-node pw-node--front">
+                                            <div class="pw-node-icon">🔐</div>
+                                            <div class="pw-node-label">JWT Auth</div>
+                                            <div class="pw-node-sub">Login · Session · Roles</div>
+                                        </div>
+                                    </div>
+                                    <div class="pw-arch-arrow">↓</div>
+                                    <div class="pw-arch-layer">
+                                        <div class="pw-arch-node pw-node--back">
+                                            <div class="pw-node-icon">🍃</div>
+                                            <div class="pw-node-label">Spring Boot REST</div>
+                                            <div class="pw-node-sub">Products · Orders · Users · Cart APIs</div>
+                                        </div>
+                                    </div>
+                                    <div class="pw-arch-arrow">↓</div>
+                                    <div class="pw-arch-layer">
+                                        <div class="pw-arch-node pw-node--db">
+                                            <div class="pw-node-icon">🗄</div>
+                                            <div class="pw-node-label">MySQL</div>
+                                            <div class="pw-node-sub">Products · Users · Orders · Inventory</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pw-arch-notes">
+                                    <div class="pw-arch-note">▸ JWT token-based stateless authentication across all
+                                        endpoints</div>
+                                    <div class="pw-arch-note">▸ Responsive UI with HTML/CSS/JS ensuring cross-platform
+                                        compat</div>
+                                    <div class="pw-arch-note">▸ Payment gateway integration boosting cart efficiency by
+                                        30%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══ WINDOW 3: Enterprise Dashboard ══ -->
+                <div class="pw-window" data-window="3">
+                    <div class="pw-titlebar">
+                        <div class="pw-win-dots">
+                            <span class="pw-dot pw-dot--red"></span>
+                            <span class="pw-dot pw-dot--yellow"></span>
+                            <span class="pw-dot pw-dot--green"></span>
+                        </div>
+                        <span class="pw-win-path">
+                            <span class="pw-path-dim">~/projects/</span>enterprise-alert-dashboard
+                        </span>
+                        <div class="pw-win-badges">
+                            <span class="pw-badge-type">Enterprise · Backend</span>
+                        </div>
+                    </div>
+
+                    <div class="pw-body">
+                        <div class="pw-proj-header">
+                            <div class="pw-proj-icon" style="--icon-color: #39d98a">📊</div>
+                            <div class="pw-proj-meta">
+                                <h3 class="pw-proj-title">Enterprise Alert &amp; Operations Dashboard</h3>
+                                <div class="pw-proj-context">
+                                    <span class="pw-ctx-item">🏢 Cognizant Technology Solutions</span>
+                                    <span class="pw-ctx-sep">·</span>
+                                    <span class="pw-ctx-item">📅 Programmer Analyst · Jun 2024 – Present</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="pw-summary">
+                            Enterprise-level <span class="hl">New Relic</span> alerts and real-time operations dashboard
+                            for client and operations teams to track order and website activity. Designed and
+                            implemented scalable <span class="hl">RESTful APIs</span> for content synchronisation and
+                            data integration, with automated CI/CD deployment pipelines via microservices architecture.
+                        </p>
+
+                        <div class="pw-metrics">
+                            <div class="pw-metric animate-metric">
+                                <span class="pw-metric-val green" data-target="15" data-prefix="+"
+                                    data-suffix="%">0%</span>
+                                <span class="pw-metric-label">Data Delivery Speed</span>
+                            </div>
+                            <div class="pw-metric animate-metric">
+                                <span class="pw-metric-val green" data-target="40" data-prefix="−"
+                                    data-suffix="%">0%</span>
+                                <span class="pw-metric-label">Release Cycle Time</span>
+                            </div>
+                            <div class="pw-metric animate-metric">
+                                <span class="pw-metric-val reveal">UX</span>
+                                <span class="pw-metric-label">Client Satisfaction ↑</span>
+                            </div>
+                        </div>
+
+                        <div class="pw-stack-row">
+                            <span class="pw-stack-label">stack</span>
+                            <div class="pw-tech-pills">
+                                <span class="pw-pill pw-pill--blue">React.js</span>
+                                <span class="pw-pill pw-pill--blue">JavaScript</span>
+                                <span class="pw-pill pw-pill--neutral">Spring Boot</span>
+                                <span class="pw-pill pw-pill--neutral">REST APIs</span>
+                                <span class="pw-pill pw-pill--green">New Relic</span>
+                                <span class="pw-pill pw-pill--green">CI/CD</span>
+                                <span class="pw-pill pw-pill--green">Agile / Scrum</span>
+                            </div>
+                        </div>
+
+                        <button class="pw-drawer-toggle" onclick="toggleDrawer(this, 'arch-3')" aria-expanded="false">
+                            <svg class="pw-drawer-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                            <span class="pw-drawer-mono">architecture.expand()</span>
+                            <span class="pw-drawer-hint">View system design</span>
+                        </button>
+
+                        <div class="pw-drawer" id="arch-3">
+                            <div class="pw-drawer-inner">
+                                <div class="pw-arch-header">
+                                    <span class="pw-arch-label">// system_architecture</span>
+                                </div>
+                                <div class="pw-arch-diagram">
+                                    <div class="pw-arch-layer pw-arch-layer--multi">
+                                        <div class="pw-arch-node pw-node--front">
+                                            <div class="pw-node-icon">⚛</div>
+                                            <div class="pw-node-label">React.js Dashboard</div>
+                                            <div class="pw-node-sub">Alerts · Order Tracking · KPIs</div>
+                                        </div>
+                                        <div class="pw-arch-node pw-node--monitor">
+                                            <div class="pw-node-icon">📡</div>
+                                            <div class="pw-node-label">New Relic</div>
+                                            <div class="pw-node-sub">APM · Alerts · Observability</div>
+                                        </div>
+                                    </div>
+                                    <div class="pw-arch-arrow">↓</div>
+                                    <div class="pw-arch-layer">
+                                        <div class="pw-arch-node pw-node--back">
+                                            <div class="pw-node-icon">🍃</div>
+                                            <div class="pw-node-label">Spring Boot Microservices</div>
+                                            <div class="pw-node-sub">Content Sync · Data Integration APIs</div>
+                                        </div>
+                                    </div>
+                                    <div class="pw-arch-arrow">↓</div>
+                                    <div class="pw-arch-layer pw-arch-layer--multi">
+                                        <div class="pw-arch-node pw-node--cicd">
+                                            <div class="pw-node-icon">🔄</div>
+                                            <div class="pw-node-label">CI/CD Pipeline</div>
+                                            <div class="pw-node-sub">Automated Deploy · 40% faster</div>
+                                        </div>
+                                        <div class="pw-arch-node pw-node--db">
+                                            <div class="pw-node-icon">🗄</div>
+                                            <div class="pw-node-label">Data Store</div>
+                                            <div class="pw-node-sub">Order Data · Activity Logs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pw-arch-notes">
+                                    <div class="pw-arch-note">▸ 15% improvement in system data delivery speed via API
+                                        optimisation</div>
+                                    <div class="pw-arch-note">▸ 40% reduction in release cycle time through CI/CD
+                                        automation</div>
+                                    <div class="pw-arch-note">▸ Agile Scrum ceremonies for iterative sprint delivery
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end pw-grid -->
+        </div>
+    </section>
+
+    <!-- ═══════════════════ AI & CLOUD VALIDATION GRID ═══════════════════ -->
+    <section class="section section-alt cv-section" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// ai_cloud.certifications</span>
+                <h2 class="section-title">AI &amp; Cloud Validation</h2>
+                <p class="section-sub">Industry-recognised credentials — verified, not assumed</p>
+            </div>
+
+            <!-- Grid header terminal bar -->
+            <div class="cv-terminal-bar">
+                <span class="cv-terminal-prompt">ayan@portfolio</span><span class="cv-terminal-sep">:</span><span
+                    class="cv-terminal-path">~/credentials</span><span class="cv-terminal-sep">$</span>
+                <span class="cv-terminal-cmd">verify --issuer all --status active</span>
+                <span class="cv-terminal-result cv-result--ok">4 certifications verified ✓</span>
+            </div>
+
+            <!-- Cards grid -->
+            <div class="cv-grid">
+
+                <!-- ── CARD 1: AWS Cloud Practitioner ── -->
+                <div class="cv-card cv-card--aws" style="--card-delay:.08s">
+                    <div class="cv-card-glow"></div>
+                    <div class="cv-card-inner">
+                        <!-- Issuer logo area -->
+                        <div class="cv-issuer">
+                            <div class="cv-logo cv-logo--aws">
+                                <svg viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="cv-logo-svg">
+                                    <text x="0" y="34" font-family="sans-serif" font-weight="900" font-size="28"
+                                        fill="#FF9900">AWS</text>
+                                </svg>
+                            </div>
+                            <div class="cv-issuer-meta">
+                                <span class="cv-issuer-name">Amazon Web Services</span>
+                                <span class="cv-issuer-badge cv-issuer-badge--aws">Official Credential</span>
+                            </div>
+                            <div class="cv-verified-seal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Title & Level -->
+                        <div class="cv-title-row">
+                            <h3 class="cv-cert-title">AWS Cloud Practitioner</h3>
+                            <span class="cv-level cv-level--foundation">Foundational</span>
+                        </div>
+
+                        <!-- Skill tags -->
+                        <div class="cv-skills">
+                            <span class="cv-skill-tag">Cloud Architecture</span>
+                            <span class="cv-skill-tag">EC2 / S3 / Lambda</span>
+                            <span class="cv-skill-tag">IAM &amp; Security</span>
+                            <span class="cv-skill-tag">AWS Pricing</span>
+                            <span class="cv-skill-tag">Cloud Economics</span>
+                        </div>
+
+                        <!-- Verify CTA -->
+                        <div class="cv-footer">
+                            <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
+                                class="cv-verify-btn cv-verify-btn--aws">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                                Verify Credential
+                            </a>
+                            <span class="cv-issuer-label">Amazon Web Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── CARD 2: AWS AI Practitioner ── -->
+                <div class="cv-card cv-card--aws" style="--card-delay:.18s">
+                    <div class="cv-card-glow"></div>
+                    <div class="cv-card-inner">
+                        <div class="cv-issuer">
+                            <div class="cv-logo cv-logo--aws">
+                                <svg viewBox="0 0 80 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="cv-logo-svg">
+                                    <text x="0" y="34" font-family="sans-serif" font-weight="900" font-size="28"
+                                        fill="#FF9900">AWS</text>
+                                </svg>
+                            </div>
+                            <div class="cv-issuer-meta">
+                                <span class="cv-issuer-name">Amazon Web Services</span>
+                                <span class="cv-issuer-badge cv-issuer-badge--aws">Official Credential</span>
+                            </div>
+                            <div class="cv-verified-seal">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="cv-title-row">
+                            <h3 class="cv-cert-title">AWS AI Practitioner</h3>
+                            <span class="cv-level cv-level--ai">AI / ML</span>
+                        </div>
+
+                        <div class="cv-skills">
+                            <span class="cv-skill-tag">Machine Learning</span>
+                            <span class="cv-skill-tag">AWS SageMaker</span>
+                            <span class="cv-skill-tag">Generative AI</span>
+                            <span class="cv-skill-tag">Amazon Bedrock</span>
+                            <span class="cv-skill-tag">AI Ethics</span>
+                        </div>
+
+                        <div class="cv-footer">
+                            <a href="https://aws.amazon.com/certification/certified-ai-practitioner/" target="_blank"
+                                class="cv-verify-btn cv-verify-btn--aws">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                                Verify Credential
+                            </a>
+                            <span class="cv-issuer-label">Amazon Web Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── CARD 3: Oracle Gen AI Associate ── -->
+                <div class="cv-card cv-card--oracle" style="--card-delay:.28s">
+                    <div class="cv-card-glow"></div>
+                    <div class="cv-card-inner">
+                        <div class="cv-issuer">
+                            <div class="cv-logo cv-logo--oracle">
+                                <svg viewBox="0 0 90 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="cv-logo-svg">
+                                    <text x="0" y="34" font-family="sans-serif" font-weight="900" font-size="22"
+                                        fill="#F80000">ORACLE</text>
+                                </svg>
+                            </div>
+                            <div class="cv-issuer-meta">
+                                <span class="cv-issuer-name">Oracle Corporation</span>
+                                <span class="cv-issuer-badge cv-issuer-badge--oracle">OCI Certified</span>
+                            </div>
+                            <div class="cv-verified-seal cv-verified-seal--oracle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="cv-title-row">
+                            <h3 class="cv-cert-title">Oracle Generative AI Associate</h3>
+                            <span class="cv-level cv-level--associate">Associate</span>
+                        </div>
+
+                        <div class="cv-skills">
+                            <span class="cv-skill-tag">Generative AI</span>
+                            <span class="cv-skill-tag">OCI AI Services</span>
+                            <span class="cv-skill-tag">LLM Fundamentals</span>
+                            <span class="cv-skill-tag">RAG Architecture</span>
+                            <span class="cv-skill-tag">Prompt Engineering</span>
+                        </div>
+
+                        <div class="cv-footer">
+                            <a href="https://education.oracle.com/oracle-cloud-infrastructure-2024-generative-ai-certified-professional/pexam_1Z0-1127-24"
+                                target="_blank" class="cv-verify-btn cv-verify-btn--oracle">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                                Verify Credential
+                            </a>
+                            <span class="cv-issuer-label">Oracle Corporation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── CARD 4: Google Gen AI Leader ── -->
+                <div class="cv-card cv-card--google" style="--card-delay:.38s">
+                    <div class="cv-card-glow"></div>
+                    <div class="cv-card-inner">
+                        <div class="cv-issuer">
+                            <div class="cv-logo cv-logo--google">
+                                <!-- Google G icon rendered as text/SVG -->
+                                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
+                                    class="cv-logo-svg cv-logo-svg--sm">
+                                    <path
+                                        d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"
+                                        fill="#FFC107" />
+                                    <path
+                                        d="M6.3 14.7l7 5.1C15.2 16.5 19.2 14 24 14c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 16.3 2 9.7 7.4 6.3 14.7z"
+                                        fill="#FF3D00" />
+                                    <path
+                                        d="M24 46c5.5 0 10.5-2 14.3-5.2l-6.6-5.6C29.5 36.9 26.9 38 24 38c-6 0-10.6-3-11.7-8.4l-7 5.4C8.6 42.2 15.7 46 24 46z"
+                                        fill="#4CAF50" />
+                                    <path
+                                        d="M44.5 20H24v8.5h11.8c-.6 2.8-2.3 5.2-4.9 6.7l6.6 5.6C41.8 37.3 45 31 45 24c0-1.3-.2-2.7-.5-4z"
+                                        fill="#1976D2" />
+                                </svg>
+                            </div>
+                            <div class="cv-issuer-meta">
+                                <span class="cv-issuer-name">Google Cloud</span>
+                                <span class="cv-issuer-badge cv-issuer-badge--google">Google Certified</span>
+                            </div>
+                            <div class="cv-verified-seal cv-verified-seal--google">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="cv-title-row">
+                            <h3 class="cv-cert-title">Google Generative AI Leader</h3>
+                            <span class="cv-level cv-level--leader">Leader</span>
+                        </div>
+
+                        <div class="cv-skills">
+                            <span class="cv-skill-tag">Vertex AI</span>
+                            <span class="cv-skill-tag">Gemini Models</span>
+                            <span class="cv-skill-tag">AI Strategy</span>
+                            <span class="cv-skill-tag">Responsible AI</span>
+                            <span class="cv-skill-tag">GenAI Transformation</span>
+                        </div>
+
+                        <div class="cv-footer">
+                            <a href="https://cloud.google.com/learn/certification" target="_blank"
+                                class="cv-verify-btn cv-verify-btn--google">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                    <polyline points="15 3 21 3 21 9" />
+                                    <line x1="10" y1="14" x2="21" y2="3" />
+                                </svg>
+                                Verify Credential
+                            </a>
+                            <span class="cv-issuer-label">Google Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end cv-grid -->
+
+            <!-- Summary bar -->
+            <div class="cv-summary-bar">
+                <div class="cv-summary-stat">
+                    <span class="cv-summary-val">4</span>
+                    <span class="cv-summary-label">Active Certifications</span>
+                </div>
+                <div class="cv-summary-divider"></div>
+                <div class="cv-summary-stat">
+                    <span class="cv-summary-val">3</span>
+                    <span class="cv-summary-label">Cloud Providers</span>
+                </div>
+                <div class="cv-summary-divider"></div>
+                <div class="cv-summary-stat">
+                    <span class="cv-summary-val">2</span>
+                    <span class="cv-summary-label">AI Specialisations</span>
+                </div>
+                <div class="cv-summary-divider"></div>
+                <div class="cv-summary-stat">
+                    <span class="cv-summary-val">2026</span>
+                    <span class="cv-summary-label">Credential Year</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ RELEASE TIMELINE RAIL ═══════════════════ -->
+    <section class="section rt-section" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// career.changelog</span>
+                <h2 class="section-title">Release Timeline</h2>
+                <p class="section-sub">Every milestone as a version — real resume chronology</p>
+            </div>
+        </div>
+
+        <!-- Full-bleed horizontal rail -->
+        <div class="rt-rail-wrapper">
+            <div class="rt-track-line"></div>
+
+            <!-- Career Express Train Capsule -->
+            <div class="career-express" id="careerExpress">
+                <div class="ce-glow"></div>
+                <div class="ce-core">
+                    <div class="ce-beam"></div>
+                </div>
+                <div class="ce-tail"></div>
+            </div>
+
+            <div class="timeline-scroll">
+                <div class="timeline-track">
+
+                    <!-- ── v0.1.0 – Education Boot ── -->
+                    <div class="rt-node rt-node--edu" data-version="v0.1.0">
+                        <div class="rt-node-dot">
+                            <div class="rt-node-pulse"></div>
+                            <div class="rt-node-core">🎓</div>
+                        </div>
+                        <div class="rt-connector"></div>
+                        <div class="rt-card rt-card--above">
+                            <div class="rt-card-version">v0.1.0</div>
+                            <div class="rt-card-date">2019 – 2023</div>
+                            <h4 class="rt-card-title">B.Tech: System Init()</h4>
+                            <p class="rt-card-sub">B.Tech — Engineering<br>Build successful · exit code 0</p>
+                            <div class="rt-card-tags">
+                                <span class="rt-tag rt-tag--edu">Education</span>
+                            </div>
+                            <div class="rt-story-panel">
+                                <div class="rt-story-header">Engineering Story</div>
+                                <ul class="rt-story-list">
+                                    <li><span class="st-hl">Challenge:</span> Mastering core engineering fundamentals
+                                        alongside practical application.</li>
+                                    <li><span class="st-hl">Tech Stack:</span> C, C++, Core Java, SQL.</li>
+                                    <li><span class="st-hl">Impact:</span> 8.5+ CGPA, Top 10% of cohort.</li>
+                                    <li><span class="st-hl">Significance:</span> Built the computational foundation
+                                        required for scalable AI architectures.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── v0.9.0 – Intern Init ── -->
+                    <div class="rt-node rt-node--intern" data-version="v0.9.0">
+                        <div class="rt-node-dot">
+                            <div class="rt-node-pulse"></div>
+                            <div class="rt-node-core">⚡</div>
+                        </div>
+                        <div class="rt-connector"></div>
+                        <div class="rt-card rt-card--below">
+                            <div class="rt-card-version">v0.9.0</div>
+                            <div class="rt-card-date">Dec 2023 – Apr 2024</div>
+                            <h4 class="rt-card-title">Intern: Init()</h4>
+                            <p class="rt-card-sub">Software Engineer Intern<br>Cognizant Technology Solutions</p>
+                            <div class="rt-card-tags">
+                                <span class="rt-tag rt-tag--intern">Internship</span>
+                            </div>
+                            <div class="rt-story-panel">
+                                <div class="rt-story-header">Engineering Story</div>
+                                <ul class="rt-story-list">
+                                    <li><span class="st-hl">Challenge:</span> Architecting full-stack solutions for
+                                        enterprise eCommerce.</li>
+                                    <li><span class="st-hl">Tech Stack:</span> React.js, Java Spring Boot, Git.</li>
+                                    <li><span class="st-hl">Impact:</span> Boosted system efficiency by 30% through cart
+                                        optimization.</li>
+                                    <li><span class="st-hl">Significance:</span> Transitioned from student logic to
+                                        production-level builder patterns.</li>
+                                </ul>
+                                <span class="rt-tag rt-tag--tech">Java · Spring</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── v1.0.0 – E-Commerce Release ── -->
+                    <div class="rt-node rt-node--ship" data-version="v1.0.0">
+                        <div class="rt-node-dot">
+                            <div class="rt-node-pulse"></div>
+                            <div class="rt-node-core">🚀</div>
+                        </div>
+                        <div class="rt-connector"></div>
+                        <div class="rt-card rt-card--above">
+                            <div class="rt-card-version">v1.0.0</div>
+                            <div class="rt-card-date">2024</div>
+                            <h4 class="rt-card-title">E-Commerce Shipped</h4>
+                            <p class="rt-card-sub">Full-Stack: React + Spring Boot<br>JWT auth · MySQL</p>
+                            <div class="rt-card-tags">
+                                <span class="rt-tag rt-tag--ship">Full Stack</span>
+                            </div>
+                            <div class="rt-story-panel">
+                                <div class="rt-story-header">Engineering Story</div>
+                                <ul class="rt-story-list">
+                                    <li><span class="st-hl">Challenge:</span> End-to-end delivery of scalable shopping
+                                        cart and payment gateway.</li>
+                                    <li><span class="st-hl">Tech Stack:</span> React, JWT, REST APIs, MySQL.</li>
+                                    <li><span class="st-hl">Impact:</span> Deployed secure, zero-bug release tracking
+                                        via manual/automated tests.</li>
+                                    <li><span class="st-hl">Progression:</span> Learned robust application state
+                                        management and secure microservices.</li>
+                                </ul>
+                                <span class="rt-tag rt-tag--tech">React · JWT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── v2.0.0 – PA Trainee ── -->
+                    <div class="rt-node rt-node--promo" data-version="v2.0.0">
+                        <div class="rt-node-dot">
+                            <div class="rt-node-pulse"></div>
+                            <div class="rt-node-core">🏃</div>
+                        </div>
+                        <div class="rt-connector"></div>
+                        <div class="rt-card rt-card--below">
+                            <div class="rt-card-version">v2.0.0</div>
+                            <div class="rt-card-date">Jun 2024 – Jun 2025</div>
+                            <h4 class="rt-card-title">Trainee.exe Executed</h4>
+                            <p class="rt-card-sub">Programmer Analyst Trainee<br>Cognizant</p>
+                            <div class="rt-card-tags">
+                                <span class="rt-tag rt-tag--promo">Trainee</span>
+                            </div>
+                            <div class="rt-story-panel">
+                                <div class="rt-story-header">Engineering Story</div>
+                                <ul class="rt-story-list">
+                                    <li><span class="st-hl">Challenge:</span> Supporting massive enterprise dashboard
+                                        monitoring operations.</li>
+                                    <li><span class="st-hl">Tech Stack:</span> Java, Spring, Scrum.</li>
+                                    <li><span class="st-hl">Impact:</span> Assisted in automating resilient CI/CD
+                                        deployment workflows.</li>
+                                    <li><span class="st-hl">Progression:</span> Deepened Agile workflow experience
+                                        inside rapid enterprise release cycles.</li>
+                                </ul>
+                                <span class="rt-tag rt-tag--tech">Cognizant</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── v2.5.0 – Promotion ── -->
+                    <div class="rt-node rt-node--promo" data-version="v2.5.0">
+                        <div class="rt-node-dot">
+                            <div class="rt-node-pulse"></div>
+                            <div class="rt-node-core">🔼</div>
+                        </div>
+                        <div class="rt-connector"></div>
+                        <div class="rt-card rt-card--above">
+                            <div class="rt-card-version">v2.5.0</div>
+                            <div class="rt-card-date">Jun 2025</div>
+                            <h4 class="rt-card-title">Promoted: PA.exe</h4>
+                            <p class="rt-card-sub">Programmer Analyst<br>Cognizant · Production role</p>
+                            <div class="rt-card-tags">
+                                <span class="rt-tag rt-tag--promo">Promotion</span>
+                            </div>
+                            <div class="rt-story-panel">
+                                <div class="rt-story-header">Engineering Story</div>
+                                <ul class="rt-story-list">
+                                    <li><span class="st-hl">Challenge:</span> Designing RESTful APIs for heavy data
+                                        synchronization tasks.</li>
+                                    <li><span class="st-hl">Tech Stack:</span> React.js, Spring Boot, New Relic.</li>
+                                    <li><span class="st-hl">Impact:</span> Improved data delivery speed by 15%, reduced
+                                        release cycle by 40%.</li>
+                                    <li><span class="st-hl">Significance:</span> Mastered enterprise observability and
+                                        robust backend scaling strategies.</li>
+                                </ul>
+                                <span class="rt-tag rt-tag--tech">Production</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── v3.0.0 – AI Module ── -->
+                    <div class="rt-node rt-node--ai rt-node--current" data-version="v3.0.0">
+                        <div class="rt-node-dot">
+                            <div class="rt-node-pulse"></div>
+                            <div class="rt-node-core">🧠</div>
+                        </div>
+                        <div class="rt-connector"></div>
+                        <div class="rt-card rt-card--below rt-card--current">
+                            <div class="rt-card-version">v3.0.0</div>
+                            <div class="rt-card-date">In Progress</div>
+                            <h4 class="rt-card-title">AI Module: Engaged</h4>
+                            <p class="rt-card-sub">AI Wellness Platform · Transition<br>GPT · Vibe Coding</p>
+                            <div class="rt-card-tags">
+                                <span class="rt-tag rt-tag--ai">AI Builder</span>
+                            </div>
+                            <div class="rt-story-panel">
+                                <div class="rt-story-header">Engineering Story</div>
+                                <ul class="rt-story-list">
+                                    <li><span class="st-hl">Challenge:</span> Building modern AI-driven wellness
+                                        platforms integrating LLMs.</li>
+                                    <li><span class="st-hl">Tech Stack:</span> OpenAI API, React, AWS, OCI.</li>
+                                    <li><span class="st-hl">Impact:</span> Certified in AWS/Oracle GenAI; aggressively
+                                        spearheading AI feature rollouts.</li>
+                                    <li><span class="st-hl">Relevance:</span> Firmly planted flag in the AI-native
+                                        engineering frontier.</li>
+                                </ul>
+                                <span class="rt-tag rt-tag--current">CURRENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trailing arrow -->
+                    <div class="rt-trail">
+                        <span class="rt-trail-dots">· · ·</span>
+                        <span class="rt-trail-label">next release</span>
+                    </div>
+
+                </div><!-- end timeline-track -->
+            </div><!-- end timeline-scroll -->
+        </div><!-- end rt-rail-wrapper -->
+    </section>
+
+    <!-- ═══════════════════ EXPERIENCE ═══════════════════ -->
+
+
+    <section class="section section-alt" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// experience</span>
+                <h2 class="section-title">Career Timeline</h2>
+                <p class="section-sub">Where I've built, shipped, and grown</p>
+            </div>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Jun 2025 – Present</span>
+                            <span class="timeline-badge current">Current</span>
+                        </div>
+                        <h3 class="timeline-role">Programmer Analyst</h3>
+                        <div class="timeline-company">Cognizant Technology Solutions · Bengaluru, Karnataka</div>
+                        <ul class="timeline-list">
+                            <li>Developed and maintained enterprise-level New Relic alerts & dashboards for client and
+                                operations teams to track order and website activity</li>
+                            <li>Designed and implemented RESTful APIs for content synchronisation and data integration,
+                                improving system data delivery speed by 15%</li>
+                            <li>Enhanced front-end user interfaces using React.js and JavaScript, significantly
+                                improving user experience (UX) and client satisfaction ratings</li>
+                            <li>Automated software deployment workflows and continuous integration processes, reducing
+                                release cycle time by 40%</li>
+                            <li>Participated in Agile Scrum ceremonies and sprint planning for iterative software
+                                development</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span class="pill sm">React.js</span>
+                            <span class="pill sm">Spring Boot</span>
+                            <span class="pill sm">REST APIs</span>
+                            <span class="pill sm">New Relic</span>
+                            <span class="pill sm">Agile</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Jun 2024 – Jun 2025</span>
+                            <span class="timeline-badge">Trainee</span>
+                        </div>
+                        <h3 class="timeline-role">Programmer Analyst Trainee</h3>
+                        <div class="timeline-company">Cognizant Technology Solutions · Bengaluru, Karnataka</div>
+                        <ul class="timeline-list">
+                            <li>Supported enterprise-level dashboard monitoring and assisted in API data integration.
+                            </li>
+                            <li>Helped automate routine software deployment workflows.</li>
+                            <li>Participated in daily Agile Scrum activities.</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span class="pill sm">Java</span>
+                            <span class="pill sm">Spring</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-date">Dec 2023 – Apr 2024</span>
+                            <span class="timeline-badge intern">Internship</span>
+                        </div>
+                        <h3 class="timeline-role">Software Engineer Intern</h3>
+                        <div class="timeline-company">Cognizant Technology Solutions · Pune, Maharashtra</div>
+                        <ul class="timeline-list">
+                            <li>Developed front-end modules using React.js and backend microservices using Java Spring
+                                Boot framework</li>
+                            <li>Implemented eCommerce shopping cart management system and payment gateway integration,
+                                boosting system efficiency by 30%</li>
+                            <li>Conducted comprehensive manual testing and automated testing procedures to ensure
+                                bug-free software delivery</li>
+                            <li>Worked in Agile development environment with version control using Git and GitHub</li>
+                        </ul>
+                        <div class="timeline-stack">
+                            <span class="pill sm">React.js</span>
+                            <span class="pill sm">Java</span>
+                            <span class="pill sm">Spring Boot</span>
+                            <span class="pill sm">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// contact</span>
+                <h2 class="section-title">Let's Build Together</h2>
+                <p class="section-sub">Open to full-time roles, freelance projects, and AI collaborations</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <a href="mailto:ayanp626@gmail.com" class="contact-item" id="contactEmail">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0 1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Email</strong>
+                            <span>ayanp626@gmail.com</span>
+                        </div>
+                        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/ayan-palit-989b09251" target="_blank" class="contact-item"
+                        id="contactLinkedin">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <span>ayan-palit-989b09251</span>
+                        </div>
+                        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="https://ayapalitele.app" target="_blank" class="contact-item" id="contactPortfolio">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Portfolio</strong>
+                            <span>ayapalitele.app</span>
+                        </div>
+                        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="tel:+916290898211" class="contact-item" id="contactPhone">
+                        <div class="contact-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.41 2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>+91 6290898211</span>
+                        </div>
+                        <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="contact-terminal" id="recruiterTerminal" style="margin-bottom: 2rem;">
+                    <div class="ct-header">
+                        <span>// recruiter.init()</span>
+                    </div>
+                    <div class="ct-body"
+                        style="padding: 1.5rem; font-family: 'JetBrains Mono', 'Fira Code', monospace; color: var(--c-text); font-size: 0.9rem;">
+                        <div style="margin-bottom: 0.5rem;"><span style="color: var(--c-green);">recruiter@sys:~$</span>
+                            <span style="color: var(--c-accent);">load --contact-details</span>
+                        </div>
+                        <div style="color: var(--c-sub); margin-bottom: 1rem;">Contact records structured and
+                            auto-filled...</div>
+
+                        <div style="margin-left: 1rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                            <div><span style="color: var(--c-violet);">email:</span> ayanpalit2001@gmail.com</div>
+                            <div><span style="color: var(--c-violet);">linkedin:</span> <a
+                                    href="https://linkedin.com/in/ayan-palit-860568211" target="_blank"
+                                    style="color: var(--c-text); text-decoration: underline; text-underline-offset: 4px;">ayan-palit-860568211</a>
+                            </div>
+                            <div><span style="color: var(--c-violet);">github:</span> <a href="#"
+                                    onclick="alert('GitHub link not available in provided records.')"
+                                    style="color: var(--c-text); text-decoration: underline; text-underline-offset: 4px;">github.com/ayanpalit</a>
+                            </div>
+                            <div><span style="color: var(--c-violet);">resume:</span> <a href="Ayan_palit-resume-1.pdf"
+                                    download
+                                    style="color: var(--c-text); text-decoration: underline; text-underline-offset: 4px;">Ayan_palit-resume-1.pdf</a>
+                            </div>
+                            <div><span style="color: var(--c-violet);">portfolio:</span> <a
+                                    href="https://ayanpalit.showfolio.app" target="_blank"
+                                    style="color: var(--c-text); text-decoration: underline; text-underline-offset: 4px;">ayanpalit.showfolio.app</a>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 0.5rem;"><span style="color: var(--c-green);">recruiter@sys:~$</span>
+                            <span style="color: var(--c-accent);">help commands</span>
+                        </div>
+                        <div style="color: var(--c-sub); margin-bottom: 1rem; margin-left: 1rem; line-height: 1.6;">
+                            Available commands:<br>
+                            &gt; connect --linkedin<br>
+                            &gt; open --github<br>
+                            &gt; resume --download<br>
+                            &gt; message --ayan
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem;">
+                            <span style="color: var(--c-green);">recruiter@sys:~$</span>
+                            <input type="text" id="recruiterInput" class="recruiter-input" autocomplete="off"
+                                spellcheck="false" placeholder="type command here..." />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-terminal" id="contactTerminal">
+                    <div class="ct-header">
+                        <span>// message.send()</span>
+                    </div>
+                    <form class="ct-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="ct-field">
+                            <label>name<span class="ct-required">*</span></label>
+                            <input type="text" id="fname" placeholder="your_name" required />
+                        </div>
+                        <div class="ct-field">
+                            <label>email<span class="ct-required">*</span></label>
+                            <input type="email" id="femail" placeholder="your@email.com" required />
+                        </div>
+                        <div class="ct-field">
+                            <label>message<span class="ct-required">*</span></label>
+                            <textarea id="fmsg" rows="4" placeholder="Let's collaborate on something great..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-w" id="submitBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                            Send Message
+                        </button>
+                        <div class="ct-success" id="ctSuccess" style="display:none;">
+                            ✓ Message queued successfully. I'll respond within 24hrs.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="brand-bracket">[</span>
+                <span class="brand-name">AP</span>
+                <span class="brand-bracket">]</span>
+                <span class="brand-dot">_</span>
+            </div>
+            <p class="footer-copy">
+                © 2026 Ayan Palit · Built with passion &amp; <span class="hl">AI</span>
+            </p>
+            <div class="footer-links">
+                <a href="mailto:ayanp626@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/ayan-palit-989b09251" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terminal Root Jump -->
+    <button class="root-jump" id="rootJump" aria-label="Return to Root" title="Return to Root Directory">
+        <div class="rj-glow-ring"></div>
+        <span class="rj-prompt">&gt;</span> <span class="rj-cmd" id="rjCmd"></span><span class="rj-cursor">_</span>
+        <svg class="rj-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
