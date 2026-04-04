@@ -603,7 +603,7 @@ function initCareerExpress() {
 }
 
 /* ══════════════════════════════════════════════════════════
-   ENGINEERING STORY PANELS — INTERACTIVE MILESTONE STATIONS
+   TIMELINE MILESTONE ACTIVATION & SCROLL CENTER
 ══════════════════════════════════════════════════════════ */
 function initStoryPanels() {
     const scroll = document.querySelector('.timeline-scroll');
@@ -612,41 +612,20 @@ function initStoryPanels() {
 
     if (!scroll || !cards.length) return;
 
-    const PANEL_W = 256;  // px — must match CSS width + gap
-    const PANEL_GAP = 14;
-
-    function computePlacement(card) {
-        const cardRect = card.getBoundingClientRect();
-        const vpW = window.innerWidth;
-        const rightSpace = vpW - cardRect.right;
-        const leftSpace = cardRect.left;
-
-        if (rightSpace >= PANEL_W + PANEL_GAP) return 'right';
-        if (leftSpace >= PANEL_W + PANEL_GAP) return 'left';
-        return 'below';
-    }
+    let activeCard = null;
 
     function activateCard(card) {
         const parentNode = card.closest('.rt-node');
         if (!parentNode) return;
 
-        // 1. Clear all previous states
-        nodes.forEach(n => {
-            n.classList.remove('node-active');
-            const p = n.querySelector('.rt-story-panel');
-            if (p) p.removeAttribute('data-placement');
-        });
+        // Clear all previous states
+        nodes.forEach(n => n.classList.remove('node-active'));
 
-        // 2. Determine collision-safe placement
-        const panel = card.querySelector('.rt-story-panel');
-        const placement = computePlacement(card);
-        if (panel) panel.setAttribute('data-placement', placement);
-
-        // 3. Activate — CSS transition fires
+        // Activate new node
         parentNode.classList.add('node-active');
+        activeCard = card;
 
-        // 4. Smoothly center the scroll wrapper on this card
-        //    The Career Express lerp follows naturally
+        // Smoothly center the scroll wrapper on this card
         const center = card.offsetLeft - (scroll.clientWidth / 2) + (card.offsetWidth / 2);
         scroll.scrollTo({ left: center, behavior: 'smooth' });
     }
@@ -661,11 +640,11 @@ function initStoryPanels() {
     // Close on outside click
     document.addEventListener('click', e => {
         if (!e.target.closest('.rt-node')) {
-            nodes.forEach(n => {
-                n.classList.remove('node-active');
-                const p = n.querySelector('.rt-story-panel');
-                if (p) p.removeAttribute('data-placement');
-            });
+            nodes.forEach(n => n.classList.remove('node-active'));
+            activeCard = null;
         }
     });
+
+    // Optionally handle resize to recenter active card, but probably not strictly necessary. Let's keep it simple.
 }
+
