@@ -6,6 +6,15 @@
 
 'use strict';
 
+/* ── CENTRAL CONTACT CONFIG ─────────────────────────────────── */
+const CONTACT_CONFIG = {
+    email: "ayanpalit2025@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ayan-palit-860568211",
+    github: "https://github.com/ayanpalit",
+    phone: "+91 6295389311",
+    resume: "Ayan_palit-resume-1.pdf"
+};
+
 /* ── BOOT SEQUENCE CONFIG ─────────────────────────────────── */
 const BOOT_LINES = [
     { text: 'initializing profile ...', tag: 'INIT', delay: 0 },
@@ -33,6 +42,8 @@ const TYPEWRITER_ROLES = [
 
 /* ── INIT ─────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
+    initCosmicCanvas();
+    populateContactDetails();
     startBootSequence();
     initClock();
     initUptime();
@@ -428,26 +439,42 @@ function toggleDrawer(btn, drawerId) {
 }
 
 
-/* ══════════════════════════════════════════════════════════
-   CONTACT FORM
-══════════════════════════════════════════════════════════ */
-function handleFormSubmit(e) {
-    e.preventDefault();
-    const btn = document.getElementById('submitBtn');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
 
-    // Simulate async send
-    setTimeout(() => {
-        btn.textContent = '✓ Sent!';
-        document.getElementById('ctSuccess').style.display = 'block';
-        e.target.reset();
-        setTimeout(() => {
-            btn.textContent = 'Send Message';
-            btn.disabled = false;
-            document.getElementById('ctSuccess').style.display = 'none';
-        }, 4000);
-    }, 1200);
+/* ══════════════════════════════════════════════════════════
+   CONTACT DATA POPULATION
+══════════════════════════════════════════════════════════ */
+function populateContactDetails() {
+    // Nav & CTAs
+    document.querySelectorAll('.nav-cta, #heroCta2').forEach(el => {
+        if(el) el.href = 'mailto:' + CONTACT_CONFIG.email;
+    });
+    const cta3 = document.getElementById('heroCta3');
+    if (cta3) cta3.href = CONTACT_CONFIG.linkedin;
+
+    // Contact Quick Rail
+    const emailRail = document.getElementById('contactEmail');
+    if (emailRail) {
+        emailRail.href = 'mailto:' + CONTACT_CONFIG.email;
+        emailRail.querySelector('span').textContent = CONTACT_CONFIG.email;
+    }
+    const linRail = document.getElementById('contactLinkedin');
+    if (linRail) {
+        linRail.href = CONTACT_CONFIG.linkedin;
+    }
+    const gitRail = document.getElementById('contactGithub');
+    if (gitRail) {
+        gitRail.href = CONTACT_CONFIG.github;
+    }
+    const resRail = document.getElementById('contactResume');
+    if (resRail) {
+        resRail.href = CONTACT_CONFIG.resume;
+    }
+
+    // Footer Links
+    const footerEmail = document.querySelector('.footer-links a[href^="mailto:"]');
+    if (footerEmail) footerEmail.href = 'mailto:' + CONTACT_CONFIG.email;
+    const footerLin = document.querySelector('.footer-links a[target="_blank"]');
+    if (footerLin) footerLin.href = CONTACT_CONFIG.linkedin;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -524,13 +551,13 @@ if (recInput) {
             e.preventDefault();
             const val = e.target.value.trim().toLowerCase();
             if (val === 'connect --linkedin') {
-                window.open('https://linkedin.com/in/ayan-palit-860568211', '_blank');
+                window.open(CONTACT_CONFIG.linkedin, '_blank');
             } else if (val === 'open --github') {
-                alert('GitHub link not available in provided records.');
+                window.open(CONTACT_CONFIG.github, '_blank');
             } else if (val === 'resume --download') {
                 const a = document.createElement('a');
-                a.href = 'Ayan_palit-resume-1.pdf';
-                a.download = 'Ayan_palit-resume-1.pdf';
+                a.href = CONTACT_CONFIG.resume;
+                a.download = CONTACT_CONFIG.resume;
                 a.click();
             } else if (val === 'message --ayan') {
                 document.getElementById('contactForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -561,8 +588,21 @@ function initCareerExpress() {
 
     // Animation loop for smooth lerp
     function lerpLoop() {
+        const velocity = Math.abs(targetX - currentX);
         currentX += (targetX - currentX) * 0.08;
         express.style.transform = `translateX(${currentX}px)`;
+
+        // Stardust orbital wake
+        if (velocity > 1.5 && Math.random() > 0.5) {
+            const dust = document.createElement('div');
+            dust.className = 'ce-stardust';
+            express.parentElement.appendChild(dust);
+            // scatter slightly vertically
+            const yOffset = (Math.random() - 0.5) * 12;
+            dust.style.left = (currentX + 80) + 'px';
+            dust.style.top = `calc(50% + ${yOffset}px)`;
+            setTimeout(() => dust.remove(), 1000);
+        }
 
         // Node illumination logic
         const capsuleCenter = currentX + 80 + 12; // left offset + half width
@@ -648,3 +688,98 @@ function initStoryPanels() {
     // Optionally handle resize to recenter active card, but probably not strictly necessary. Let's keep it simple.
 }
 
+/* ══════════════════════════════════════════════════════════
+   COSMIC CANVAS ENGINE
+══════════════════════════════════════════════════════════ */
+function initCosmicCanvas() {
+    const canvas = document.getElementById('cosmicCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    
+    let w, h;
+    const particles = [];
+    const PARTICLE_COUNT = 65; // Sparsely elegant
+    
+    function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    
+    class Particle {
+        constructor() {
+            this.x = Math.random() * w;
+            this.y = Math.random() * h;
+            this.z = Math.random() * 0.6 + 0.1; // Depth factor
+            this.vx = (Math.random() - 0.5) * 0.2 * this.z;
+            this.vy = (Math.random() - 0.5) * 0.2 * this.z;
+            this.radius = Math.random() * 1.2 * this.z + 0.4;
+            this.baseAlpha = Math.random() * 0.5 + 0.2;
+            this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+            this.twinklePhase = Math.random() * Math.PI * 2;
+        }
+        
+        update(scrollY) {
+            this.x += this.vx;
+            this.y += this.vy;
+            
+            // Subtly tie Y position to scroll for deep parallax
+            const parallaxY = this.y - (scrollY * this.z * 0.12);
+            let drawY = ((parallaxY % h) + h) % h;
+            let drawX = ((this.x % w) + w) % w;
+            
+            this.twinklePhase += this.twinkleSpeed;
+            const alpha = this.baseAlpha + Math.sin(this.twinklePhase) * 0.2;
+            
+            return { x: drawX, y: drawY, alpha, z: this.z };
+        }
+    }
+    
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+    }
+    
+    let lastTime = 0;
+    function animate(time) {
+        requestAnimationFrame(animate);
+        if (time - lastTime < 16) return;
+        lastTime = time;
+        
+        ctx.clearRect(0, 0, w, h);
+        const scrollY = window.scrollY || 0;
+        
+        const activeParticles = particles.map(p => p.update(scrollY));
+        
+        // Draw constellation connections
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < activeParticles.length; i++) {
+            const p1 = activeParticles[i];
+            
+            // Star dot
+            ctx.beginPath();
+            ctx.arc(p1.x, p1.y, particles[i].radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(157, 180, 255, ${p1.alpha})`;
+            ctx.fill();
+            
+            // Connections
+            for (let j = i + 1; j < activeParticles.length; j++) {
+                const p2 = activeParticles[j];
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const distSq = dx*dx + dy*dy;
+                
+                // Only connect nodes that are close to each other
+                if (distSq < 18000) {
+                    const opacity = (1 - distSq / 18000) * 0.12 * p1.z * p2.z;
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.strokeStyle = `rgba(99, 120, 255, ${opacity})`;
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+    animate(0);
+}
