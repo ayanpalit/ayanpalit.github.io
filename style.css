@@ -609,6 +609,36 @@ img {
     transition: transform 0.1s ease-out;
 }
 
+/* Cosmic Milky Way Layers */
+.nebula-band {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: 
+        radial-gradient(ellipse at 40% 30%, rgba(99, 120, 255, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 60%, rgba(157, 95, 255, 0.15) 0%, transparent 50%),
+        linear-gradient(120deg, transparent 30%, rgba(30, 40, 100, 0.2) 45%, rgba(60, 20, 120, 0.15) 55%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0.9;
+    mix-blend-mode: screen;
+    animation: nebulaDrift 20s alternate infinite ease-in-out;
+}
+
+@keyframes nebulaDrift {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.05) translate(-2%, 2%); }
+}
+
+#cosmicCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
 /* Ambient orbs */
 .hero-orb {
     position: absolute;
@@ -2024,12 +2054,17 @@ img {
 }
 
 /* ── CONTACT ──────────────────────────────────────────────── */
+#contact {
+    padding-bottom: 60px;
+}
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
+    align-items: center;
 }
 
 .contact-card {
@@ -3072,6 +3107,25 @@ img {
 
 .career-express.moving .ce-tail {
     opacity: 1;
+}
+
+/* Stardust trail element */
+.ce-stardust {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--c-violet), 0 0 12px var(--c-blue);
+    pointer-events: none;
+    z-index: 5;
+    opacity: 1;
+    animation: stardustFade 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes stardustFade {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(0); opacity: 0; }
 }
 
 /* Express Lit Nodes */
