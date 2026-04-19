@@ -3555,3 +3555,130 @@ img {
         padding: 10px 12px;
     }
 }
+
+/* ══════════════════════════════════════════════════════════
+   TOAST NOTIFICATION SYSTEM
+══════════════════════════════════════════════════════════ */
+
+/* ── Container: fixed top-right, non-blocking ── */
+#toast-container {
+    position: fixed;
+    top: 80px; /* below navbar */
+    right: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    pointer-events: none; /* let clicks pass through */
+}
+
+/* ── Individual toast ── */
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border-radius: 10px;
+
+    /* glassmorphism */
+    background: rgba(8, 12, 28, 0.72);
+    backdrop-filter: blur(14px) saturate(1.6);
+    -webkit-backdrop-filter: blur(14px) saturate(1.6);
+
+    /* neon cyan/green border + glow */
+    border: 1px solid rgba(57, 217, 138, 0.35);
+    box-shadow:
+        0 0 18px rgba(57, 217, 138, 0.12),
+        0 0 40px rgba(0, 210, 190, 0.06),
+        0 4px 20px rgba(0, 0, 0, 0.45);
+
+    /* typography */
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--c-text);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    /* initial hidden state for entry animation */
+    opacity: 0;
+    transform: translateX(20px);
+
+    /* smooth transitions */
+    transition:
+        opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+    min-width: 220px;
+    max-width: 320px;
+}
+
+/* ── Entry state (JS toggles .toast--visible) ── */
+.toast--visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── Exit state (JS toggles .toast--exiting) ── */
+.toast--exiting {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition:
+        opacity 0.28s ease-in,
+        transform 0.28s ease-in;
+}
+
+/* ── Toast icon dot ── */
+.toast__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #39d98a;
+    box-shadow: 0 0 8px rgba(57, 217, 138, 0.7);
+    flex-shrink: 0;
+    animation: toast-dot-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes toast-dot-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(57, 217, 138, 0.7); }
+    50%       { opacity: 0.6; box-shadow: 0 0 14px rgba(57, 217, 138, 0.3); }
+}
+
+/* ── Toast message text ── */
+.toast__msg {
+    color: rgba(226, 232, 255, 0.88);
+    font-size: 0.79rem;
+}
+
+/* ── Contact item "copied" glow flash ── */
+.contact-item--copied {
+    border-color: rgba(57, 217, 138, 0.5) !important;
+    box-shadow: 0 0 18px rgba(57, 217, 138, 0.15);
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+/* ── .copied: visual feedback on copy-email-btn click ── */
+/* Applied for ~1 second on successful clipboard write     */
+.copy-email-btn.copied,
+.copy-email-btn.copied:hover {
+    border-color: rgba(57, 217, 138, 0.6) !important;
+    box-shadow:
+        0 0 0 1px rgba(57, 217, 138, 0.25),
+        0 0 20px rgba(57, 217, 138, 0.18),
+        0 -4px 12px rgba(57, 217, 138, 0.08) !important;
+    transform: translateY(-3px) !important;
+    color: rgba(57, 217, 138, 0.9) !important;
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease,
+        color 0.15s ease !important;
+}
+
+/* ── btn-ghost copy-email-btn: keep ghost style + glow ── */
+.btn-ghost.copy-email-btn.copied {
+    background: rgba(57, 217, 138, 0.06) !important;
+}

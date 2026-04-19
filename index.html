@@ -36,7 +36,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <a href="mailto:ayanpalit2025@gmail.com" class="nav-cta">
+            <a href="#" class="nav-cta copy-email-btn" data-email="ayanpalit2025@gmail.com">
                 <span>Hire Me</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -167,18 +167,23 @@
                     View Projects
                 </a>
 
-                <a href="mailto:ayanpalit2025@gmail.com?subject=Opportunity%20Discussion" class="btn btn-secondary"
-                    id="heroCta2">
+                <a href="https://www.linkedin.com/in/ayan-palit-860568211" target="_blank"
+                    class="btn btn-secondary" id="heroCta2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    Let's Connect
+                </a>
+
+                <a href="#" class="btn btn-ghost copy-email-btn" id="heroCta3"
+                    data-email="ayanpalit2025@gmail.com">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                    Let’s Connect
-                </a>
-
-                <a href="https://www.linkedin.com/in/ayan-palti-860568211" target="_blank" class="btn btn-ghost"
-                    id="heroCta3">
-                    LinkedIn
+                    Hire Me
                 </a>
             </div>
 
@@ -540,17 +545,7 @@
                                     <span class="pw-ctx-item">🏢 Cognizant Technology Solutions</span>
                                 </div>
                             </div>
-                            <div class="pw-proj-links">
-                                <a href="https://ayapalitele.app" target="_blank" class="pw-link-btn" title="Live Demo">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                        <polyline points="15 3 21 3 21 9" />
-                                        <line x1="10" y1="14" x2="21" y2="3" />
-                                    </svg>
-                                    Live
-                                </a>
-                            </div>
+
                         </div>
 
                         <!-- Summary -->
@@ -1596,6 +1591,9 @@
             <path d="M18 15l-6-6-6 6" />
         </svg>
     </button>
+
+    <!-- ═══════════════════ TOAST NOTIFICATION CONTAINER ═══════════════════ -->
+    <div id="toast-container"></div>
 
     <script src="main.js"></script>
 </body>
