@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCareerExpress();
     initStoryPanels();
     initSkillBars();
+    initCopyEmailBtns();
 
     // skip on spacebar / enter
     const skipFn = (e) => {
@@ -445,11 +446,10 @@ function toggleDrawer(btn, drawerId) {
 ══════════════════════════════════════════════════════════ */
 function populateContactDetails() {
     // Nav & CTAs
-    document.querySelectorAll('.nav-cta, #heroCta2').forEach(el => {
-        if(el) el.href = 'mailto:' + CONTACT_CONFIG.email;
-    });
-    const cta3 = document.getElementById('heroCta3');
-    if (cta3) cta3.href = CONTACT_CONFIG.linkedin;
+    // .nav-cta and #heroCta3 are now copy-email-btn — handled by initCopyEmailBtns()
+    // #heroCta2 is the LinkedIn "Let's Connect" button — href set in HTML
+    const cta2 = document.getElementById('heroCta2');
+    if (cta2) cta2.href = CONTACT_CONFIG.linkedin;
 
     // Contact Quick Rail
     const emailRail = document.getElementById('contactEmail');
@@ -782,4 +782,161 @@ function initCosmicCanvas() {
         }
     }
     animate(0);
+}
+
+/* ══════════════════════════════════════════════════════════
+   TOAST NOTIFICATION SYSTEM
+   Reusable floating feedback — glassmorphism + neon glow
+══════════════════════════════════════════════════════════ */
+
+/**
+ * showToast(message)
+ * Injects a self-dismissing premium toast into #toast-container.
+ * Supports stacking — each call appends a new toast.
+ * Vanilla JS, zero dependencies.
+ */
+function showToast(message) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+
+    // Build toast DOM
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+
+    const dot = document.createElement('span');
+    dot.className = 'toast__dot';
+
+    const msg = document.createElement('span');
+    msg.className = 'toast__msg';
+    msg.textContent = message;
+
+    toast.appendChild(dot);
+    toast.appendChild(msg);
+    container.appendChild(toast);
+
+    // Trigger entry animation on next frame
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            toast.classList.add('toast--visible');
+        });
+    });
+
+    // Auto-dismiss after 2 seconds: apply exit class, then remove from DOM
+    const DISPLAY_MS   = 2000;
+    const EXIT_MS      = 300; // matches .toast--exiting transition duration
+
+    setTimeout(() => {
+        toast.classList.remove('toast--visible');
+        toast.classList.add('toast--exiting');
+        setTimeout(() => {
+            if (toast.parentNode) toast.parentNode.removeChild(toast);
+        }, EXIT_MS);
+    }, DISPLAY_MS);
+}
+
+/* ══════════════════════════════════════════════════════════
+   GLOBAL COPY-EMAIL SYSTEM
+   Handles all .copy-email-btn elements across the page.
+   • Desktop/tablet: copies to clipboard + shows toast
+   • Mobile (≤ 768px) or no clipboard API: mailto fallback
+   Call once after DOMContentLoaded.
+══════════════════════════════════════════════════════════ */
+function initCopyEmailBtns() {
+    const MOBILE_BREAKPOINT = 768; // px
+
+    /**
+     * Returns true if the current device is considered mobile.
+     * Uses screen width as the primary signal (reliable, no UA sniffing).
+     */
+    function _isMobile() {
+        return window.innerWidth <= MOBILE_BREAKPOINT;
+    }
+
+    /**
+     * Fired after a successful clipboard write.
+     * Shows toast + adds .copied visual feedback class for ~1s.
+     */
+    function _onCopied(el) {
+        showToast('Email copied!');
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 1000);
+    }
+
+    /**
+     * Also handles the #contactEmail card in the contact section —
+     * it still carries class contact-item--copied for its card glow.
+     */
+    function _onContactCardCopied(el) {
+        showToast('Email copied!');
+        el.classList.add('copied');
+        el.classList.add('contact-item--copied');
+        setTimeout(() => {
+            el.classList.remove('copied');
+            el.classList.remove('contact-item--copied');
+        }, 700);
+    }
+
+    /**
+     * execCommand textarea fallback for browsers without clipboard API.
+     */
+    function _execCopyFallback(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0;';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (_) {}
+        document.body.removeChild(ta);
+        return ok;
+    }
+
+    /**
+     * Core handler attached to every .copy-email-btn element.
+     */
+    function _handleClick(e, el) {
+        e.preventDefault();
+        const email = el.dataset.email || CONTACT_CONFIG.email;
+        const isContactCard = el.id === 'contactEmail';
+        const onSuccess = isContactCard
+            ? () => _onContactCardCopied(el)
+            : () => _onCopied(el);
+
+        // Mobile fallback → open mail client instead of copying
+        if (_isMobile()) {
+            window.location.href = 'mailto:' + email;
+            return;
+        }
+
+        // Desktop: modern Clipboard API
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email)
+                .then(onSuccess)
+                .catch(() => {
+                    // Permission denied — try execCommand
+                    if (_execCopyFallback(email)) {
+                        onSuccess();
+                    }
+                });
+        } else {
+            // Legacy fallback
+            if (_execCopyFallback(email)) {
+                onSuccess();
+            }
+        }
+    }
+
+    // Attach to every .copy-email-btn on the page (hero, nav, contact rail, etc.)
+    document.querySelectorAll('.copy-email-btn').forEach(el => {
+        el.addEventListener('click', (e) => _handleClick(e, el));
+    });
+
+    // Also wire up the #contactEmail anchor in the contact section
+    // (it carries href="mailto:..." for accessibility but we prefer clipboard)
+    const contactEmail = document.getElementById('contactEmail');
+    if (contactEmail && !contactEmail.classList.contains('copy-email-btn')) {
+        contactEmail.dataset.email = CONTACT_CONFIG.email;
+        contactEmail.addEventListener('click', (e) => _handleClick(e, contactEmail));
+    }
 }
